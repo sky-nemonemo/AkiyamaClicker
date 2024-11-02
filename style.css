@@ -1,0 +1,83 @@
+@import url("https://fonts.googleapis.com/css?family=Noto+Sans+JP");
+
+* {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-family: "Noto Sans JP";
+    font-weight: bold;
+    border-collapse: collapse;
+    user-select: none;
+}
+
+body {
+    background-color: #CCCCCC;
+}
+
+.wrapper {
+    display: grid;
+    grid-template-rows: 60px 1fr;
+    grid-template-columns: 70% 1fr;
+}
+
+.mainArea {
+    text-align: center;
+    background-image: url("https://pjsekai.sega.jp/assets/img/special/dl/virtual_bg/bg_unite05.png");
+    background-position: bottom right;
+    border-top: 2px solid #333333;
+}
+
+.akiyama {
+    width: 250px;
+    height: 250px;
+    background-color: #ddaacc;
+    border-radius: 50%;
+    margin: auto;
+    margin-top: 250px;
+    background-image: url("https://pjsekai.sega.jp/assets/img/special/dl/sns_icon/icon_unite05_4_mizuki.png");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+button:hover {
+    transform: scale(1.05);
+    transition-duration: .1s;
+    cursor: pointer;
+}
+
+button:active {
+    transform: scale(1.0);
+    transition-duration: .1s;
+}
+
+.counter {
+    padding-left: 10px;
+    font-size: 40px;
+    color: black;
+    grid-row: 1;
+    grid-column: 1 / 3;
+}
+
+.itemArea {
+    background-color: #777777;
+    border-top: 2px solid #333333;
+    border-left: 2px solid #333333;
+}
+
+.itemTable {
+    height: auto;
+}
+
+.item {
+    background-color: #AAAAAA;
+    border-bottom: 2px solid #333333;
+    padding: 0px 10px;
+    font-size: 25px;
+    height: 100px;
+    vertical-align: bottom;
+    background-repeat: no-repeat;
+    background-size: auto 100px;
+    text-shadow: 2px 1px #CCC;
+}
