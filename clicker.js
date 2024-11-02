@@ -13,7 +13,7 @@ function init() {
 }
 
 function updateCounter() {
-    $(".counter").html("<font color='#F9629F'>❤</font> " + data.count);
+    $(".counter").html("<font color='#F9629F'>❤</font> " + data.count.toLocaleString());
 }
 
 function saveData() {
