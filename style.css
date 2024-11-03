@@ -9,21 +9,31 @@
     font-weight: bold;
     border-collapse: collapse;
     user-select: none;
+    border: 0px solid #4F5571;
 }
 
 body {
     background-color: #D3D6E4;
 }
 
-button:hover {
+button:hover:enabled {
     transform: scale(1.05);
     transition-duration: .1s;
+    border-width: 2px;
     cursor: pointer;
 }
 
-button:active {
+button:active:enabled {
     transform: scale(1.0);
     transition-duration: .1s;
+}
+
+button:enabled rect {
+    opacity: 0;
+}
+
+button:disabled rect {
+    opacity: 0.3;
 }
 
 svg text {
@@ -31,6 +41,7 @@ svg text {
     stroke: #4F5571;
     fill: #FFF;
     paint-order: stroke;
+    letter-spacing: 1px;
 }
 
 svg text.heart {
@@ -40,14 +51,14 @@ svg text.heart {
 .wrapper {
     display: grid;
     grid-template-rows: 60px 1fr;
-    grid-template-columns: 70% 1fr;
+    grid-template-columns: 1fr 600px;
 }
 
 .mainArea {
     text-align: center;
     background-image: url("https://pjsekai.sega.jp/assets/img/special/dl/virtual_bg/bg_unite05.png");
     background-position: bottom right;
-    border-top: 2px solid #4F5571;
+    border-top-width: 2px;
 }
 
 .akiyama {
@@ -55,6 +66,7 @@ svg text.heart {
     height: 250px;
     background-color: #ddaacc;
     border-radius: 50%;
+    border-width: 2px;
     margin: auto;
     margin-top: 250px;
     background-image: url("https://pjsekai.sega.jp/assets/img/special/dl/sns_icon/icon_unite05_4_mizuki.png");
@@ -73,8 +85,8 @@ svg text.heart {
 
 .itemArea {
     background-color: #797C93;
-    border-top: 2px solid #4F5571;
-    border-left: 2px solid #4F5571;
+    border-top-width: 2px;
+    border-left-width: 2px;
 }
 
 .itemTable {
@@ -83,8 +95,8 @@ svg text.heart {
 
 .item {
     background-color: #C6CBDF;
-    border-bottom: 2px solid #4F5571;
-    font-size: 25px;
+    border-bottom-width: 2px;
+    font-size: 20px;
     height: 100px;
     vertical-align: bottom;
     background-repeat: no-repeat;
@@ -92,7 +104,7 @@ svg text.heart {
 }
 
 .item.clicker {
-    background-image: url('https://kotonohaworks.com/free-icons/wp-content/uploads/kkrn_icon_cursor_5.png');
+    background-image: url('https://kotonohaworks.com/free-icons/wp-content/uploads/kkrn_icon_cursor_3.png');
 }
 
 .item.potato {
@@ -115,7 +127,6 @@ svg text.heart {
     background-image: url('https://pjsekai.sega.jp/assets/img/special/dl/sns_icon/icon_unite05_3_ena.png');
 }
 
-.itemButton {
-    width: 100px;
-    height: 50px;
+.itemLabel {
+    font-size: 25px;
 }
