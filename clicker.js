@@ -13,7 +13,12 @@ function init() {
 }
 
 function updateCounter() {
-    $(".counter").html("<font color='#F9629F'>❤</font> " + data.count.toLocaleString());
+    $(".counter").html(`
+            <svg>
+                <text x="5" y="45" class="heart">❤</text>
+                <text x="50" y="45">${data.count.toLocaleString()}</text>
+            </svg>`
+    );
 }
 
 function saveData() {

@@ -1,67 +1,69 @@
-<!DOCTYPE html>
 <html>
-    <head>
-        <title>Akiyama Clicker</title>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Noto+Sans+JP">
-        <link rel="stylesheet" type="text/css" href="style.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
-        <script src="clicker.js"></script>
-    </head>
-    <body>
-        <div class="wrapper">
-            <div class="counter"></div>
-            <div class="mainArea">
-                <button class="akiyama"></button>
-            </div>
-            <div class="itemArea">
-                <table class="itemTable">
-                    <tr>
-                        <td class="item" style="background-image: url('https://kotonohaworks.com/free-icons/wp-content/uploads/kkrn_icon_cursor_5.png');">
-                            <svg>
-                                <text x="5" y="95">CLICKER</text>
-                            </svg>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="item" style="background-image: url('https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhZTQY6nHBE5zNXX8GxOUJOnZKSq6rib90CGxczSZK0N6mcacSC_-24KJbIIbDBdR6-hWWw3m8EhKKAj1HNrikaVeSXuoPAafwmwJchURjb5ym4aylJN6Ew4qbuJDnHvfGKB4k5p9wi5-LZ/s800/food_frenchfry.png');">
-                            <svg>
-                                <text x="5" y="95">FRIED POTATO</text>
-                            </svg>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="item" style="background-image: url('https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh5puNP-5AEBx1MofxgChBg-Gp0RBd5SEKwczB9RPXuH8128OlJ06jzCiarIVDxGcRmdCt4rRqdgQEm6cZ2M4yyfl6SCGzrZxfBpuXSKG0NlGPWYpsOvZUTjBEOfpTyW1-nsrD_tyLP2BeR/s1600/food_curryrice_white.png');">
-                            <svg>
-                                <text x="5" y="95">CURRY RICE</text>
-                            </svg>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="item" style="background-image: url('https://pjsekai.sega.jp/assets/img/special/dl/sns_icon/icon_unite05_2_mafuyu.png');">
-                            <svg>
-                                <text x="5" y="95">ASAHINA MAFUYU</text>
-                            </svg>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="item" style="background-image: url('https://pjsekai.sega.jp/assets/img/special/dl/sns_icon/icon_unite05_1_kanade.png');">
-                            <svg>
-                                <text x="5" y="95">YOISAKI KANADE</text>
-                            </svg>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="item" style="background-image: url('https://pjsekai.sega.jp/assets/img/special/dl/sns_icon/icon_unite05_3_ena.png');">
-                            <svg>
-                                <text x="5" y="95">SHINONOME ENA</text>
-                            </svg>
-                        </td>
-                    </tr>
-                </table>
-            </div>
+
+<head>
+    <title>Akiyama Clicker</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Noto+Sans+JP">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="clicker.js"></script>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="counter"></div>
+        <div class="mainArea">
+            <button class="akiyama"></button>
         </div>
-    </body>
+        <div class="itemArea">
+            <table class="itemTable">
+                <tr>
+                    <td class="item clicker">
+                        <svg>
+                            <text x="5" y="95">CLICKER</text>
+                        </svg>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="item potato">
+                        <svg>
+                            <text x="5" y="95">FRIED POTATO</text>
+                        </svg>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="item curry">
+                        <svg>
+                            <text x="5" y="95">CURRY RICE</text>
+                        </svg>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="item mafuyu">
+                        <svg>
+                            <text x="5" y="95">ASAHINA MAFUYU</text>
+                        </svg>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="item kanade">
+                        <svg>
+                            <text x="5" y="95">YOISAKI KANADE</text>
+                        </svg>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="item ena">
+                        <svg>
+                            <text x="5" y="95">SHINONOME ENA</text>
+                        </svg>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</body>
+
 </html>
