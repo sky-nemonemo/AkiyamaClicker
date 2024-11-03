@@ -130,3 +130,10 @@ svg text.heart {
 .itemLabel {
     font-size: 25px;
 }
+
+.popup {
+    position: fixed;
+    pointer-events: none;
+    font-size: 35px;
+    z-index: auto;
+}

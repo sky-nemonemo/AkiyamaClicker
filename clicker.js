@@ -53,6 +53,24 @@ function init() {
         data.count++;
         saveData();
         updateCounter();
+
+        var elm = document.createElement("div");
+        elm.className = "popup";
+        elm.innerHTML = `<svg><text x="5" y="30" class="heart">❤</text><text x="40" y="30">+1</text></svg>`;
+        elm.style.left = event.clientX - 40;
+        elm.style.top = event.clientY - 20;
+        document.body.appendChild(elm);
+
+        gsap.timeline().to(elm, 1, {
+            translateY: -30,
+            ease: "power2.out",
+            onComplete: function() {
+                document.body.removeChild(elm);
+            }
+        }).to(elm, 0.5, {
+            opacity: 0,
+            delay: -0.5,
+        })
     });
     setInterval(loving, 20);
     setInterval(saveData, 1000 * 10);
