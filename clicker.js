@@ -51,7 +51,7 @@ function init() {
     setInterval(loving, 20);
     setInterval(saveData, 1000 * 10);
     setInterval(function() {
-        if (persecond > 0) {
+        if (persecond > 0 && document.visibilityState === "visible") {
             for (var i = 0; i < persecond.toString().length; i++) {
                 fallHeart(i / 2);
             }
