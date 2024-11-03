@@ -14,6 +14,7 @@
 
 body {
     background-color: #D3D6E4;
+    overflow: hidden;
 }
 
 button:hover:enabled {
@@ -78,15 +79,18 @@ svg text.heart {
 .counter {
     padding-left: 10px;
     font-size: 40px;
-    color: black;
     grid-row: 1;
     grid-column: 1 / 3;
+    z-index: 999;
+    border-bottom-width: 2px;
+    background-color: #D3D6E4;
 }
 
 .itemArea {
     background-color: #797C93;
     border-top-width: 2px;
     border-left-width: 2px;
+    z-index: 998;
 }
 
 .itemTable {
@@ -136,4 +140,22 @@ svg text.heart {
     pointer-events: none;
     font-size: 35px;
     z-index: auto;
+}
+
+.fallingHeart {
+    width: 80px;
+    height: 80px;
+    position: fixed;
+    pointer-events: none;
+    font-size: 80px;
+    opacity: 0.5;
+    z-index: 1;
+}
+
+.logo, .totalps {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    pointer-events: none;
+    z-index: 999;
 }

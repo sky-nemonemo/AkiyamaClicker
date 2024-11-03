@@ -47,33 +47,16 @@ function init() {
     loadData();
     updateCounter();
     updateItems();
-    $(".akiyama").on("click", function (event) {
-        $('#akiyama_audio')[0].currentTime = 0;
-        $('#akiyama_audio')[0].play();
-        data.count++;
-        saveData();
-        updateCounter();
-
-        var elm = document.createElement("div");
-        elm.className = "popup";
-        elm.innerHTML = `<svg><text x="5" y="30" class="heart">❤</text><text x="40" y="30">+1</text></svg>`;
-        elm.style.left = event.clientX - 40;
-        elm.style.top = event.clientY - 20;
-        document.body.appendChild(elm);
-
-        gsap.timeline().to(elm, 1, {
-            translateY: -30,
-            ease: "power2.out",
-            onComplete: function() {
-                document.body.removeChild(elm);
-            }
-        }).to(elm, 0.5, {
-            opacity: 0,
-            delay: -0.5,
-        })
-    });
+    $(".akiyama").on("click", clickMizuki);
     setInterval(loving, 20);
     setInterval(saveData, 1000 * 10);
+    setInterval(function() {
+        if (persecond > 0) {
+            for (var i = 0; i < persecond.toString().length; i++) {
+                fallHeart(i / 2);
+            }
+        }
+    }, 5000);
 }
 
 function updateItems() {
@@ -136,11 +119,61 @@ function updateCounter() {
             $(".item." + item.name).prop("disabled", "true");
         }
     });
+    $(".totalps").html(`
+            <text x="10" y="125">Total ❤/sec : ${persecond.toLocaleString(undefined, { minimumFractionDigits: 2 })}</text>
+    `);
+}
+
+function clickMizuki(event) {
+    $('#akiyama_audio')[0].currentTime = 0;
+    $('#akiyama_audio')[0].play();
+    data.count++;
+    saveData();
+    updateCounter();
+
+    var popup = document.createElement("div");
+    popup.className = "popup";
+    popup.innerHTML = `<svg><text x="5" y="30" class="heart">❤</text><text x="40" y="30">+1</text></svg>`;
+    popup.style.left = event.clientX - 40;
+    popup.style.top = event.clientY - 20;
+    document.body.appendChild(popup);
+
+    gsap.timeline().to(popup, 1, {
+        translateY: -30,
+        ease: "power2.out",
+        onComplete: function() {
+            document.body.removeChild(popup);
+        }
+    }).to(popup, 0.5, {
+        opacity: 0,
+        delay: -0.5,
+    });
+
+    fallHeart(0);
 }
 
 function loving() {
     data.count += persecond / 50;
     updateCounter();
+}
+
+function fallHeart(delay) {
+    var fallingHeart = document.createElement("div");
+    fallingHeart.className = "fallingHeart";
+    fallingHeart.innerHTML = `<svg><text x="5" y="80" class="heart">❤</text></svg>`;
+    fallingHeart.style.top = -50;
+    fallingHeart.style.left = Math.random() * $(".mainArea")[0].clientWidth;
+    $(".mainArea")[0].appendChild(fallingHeart);
+
+    gsap.timeline().to(fallingHeart, 10, {
+        translateY: "1200",
+        rotation: "720",
+        ease: "none",
+        delay: delay,
+        onComplete: function() {
+            $(".mainArea")[0].removeChild(fallingHeart);
+        }
+    });
 }
 
 function saveData() {
