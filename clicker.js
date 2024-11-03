@@ -135,6 +135,9 @@ function loadData() {
         data = JSON.parse(atob(cookieValue));
     }
     itemsData.forEach((item) => {
+        if (data.items == undefined) {
+            data.items = {};
+        }
         if (data.items[item.name] == undefined) {
             data.items[item.name] = 0;
         }
