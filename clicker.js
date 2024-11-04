@@ -108,7 +108,7 @@ function updateCounter() {
     $(".counter").html(`
             <svg>
                 <text x="5" y="45" class="heart">❤</text>
-                <text x="50" y="45">${data.count.toLocaleString(undefined, { minimumFractionDigits: 2 })}</text>
+                <text x="50" y="45">${data.count.toLocaleString(undefined, { maximumFractionDigits: 0 })}</text>
             </svg>
     `);
     itemsData.forEach((item) => {
