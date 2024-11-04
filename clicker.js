@@ -2,7 +2,9 @@ var data = {
     count: 0,
     items: {},
 };
+
 var persecond = 0;
+const appVersion = "0.9";
 
 const itemsData = [
     {
@@ -119,8 +121,9 @@ function updateCounter() {
             $(".item." + item.name).prop("disabled", "true");
         }
     });
-    $(".totalps").html(`
-            <text x="10" y="125">Total ❤/sec : ${persecond.toLocaleString(undefined, { minimumFractionDigits: 2 })}</text>
+    $(".description").html(`
+            <text x="10" y="25">Akiyama Clicker ver. ${appVersion}</text>
+            <text x="10" y="60">Total ❤/sec : ${persecond.toLocaleString(undefined, { minimumFractionDigits: 2 })}</text>
     `);
 }
 

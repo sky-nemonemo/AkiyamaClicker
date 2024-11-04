@@ -66,14 +66,17 @@ svg text.heart {
     border-top-width: 2px;
 }
 
+.mainArea tr, .mainArea td {
+    height: 30%;
+    text-align: center;
+}
+
 .akiyama {
     width: 250px;
     height: 250px;
     background-color: #ddaacc;
     border-radius: 50%;
     border-width: 2px;
-    margin: auto;
-    margin-top: 250px;
     background-image: url("https://pjsekai.sega.jp/assets/img/special/dl/sns_icon/icon_unite05_4_mizuki.png");
     background-size: 100%;
     background-repeat: no-repeat;
@@ -156,10 +159,8 @@ svg text.heart {
     z-index: 1;
 }
 
-.logo, .totalps {
-    position: fixed;
-    top: 0px;
-    left: 0px;
+.description {
+    height: auto;
     pointer-events: none;
-    z-index: 999;
+    z-index: 999;;
 }
