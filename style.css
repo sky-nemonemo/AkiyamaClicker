@@ -12,6 +12,10 @@
     border: 0px solid #4F5571;
 }
 
+html {
+    touch-action: manipulation;
+}
+
 body {
     background-color: #D3D6E4;
     overflow: hidden;
