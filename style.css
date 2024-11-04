@@ -160,7 +160,65 @@ svg text.heart {
 }
 
 .description {
-    height: auto;
+    height: 70px;
     pointer-events: none;
     z-index: 999;;
+}
+
+/* for PC */
+@media (min-width: 1000px) {
+    
+    .wrapper {
+        grid-template-rows: 60px 1fr;
+        grid-template-columns: 1fr 600px;
+    }
+    
+    .akiyama {
+        width: 250px;
+        height: 250px;
+    }
+    
+    .mainArea {
+        grid-row: 2;
+        grid-column: 1;
+    }
+    
+    .itemArea {
+        grid-row: 2;
+        grid-column: 2;
+    }
+}
+
+/* for SP */
+@media (max-width: 1000px) {
+    
+    .wrapper {
+        grid-template-rows: 60px 40% 1fr;
+        grid-template-columns: 100%;
+    }
+    
+    .mainArea {
+        grid-row: 2;
+        grid-column: 1;
+    }
+    
+    .akiyama {
+        width: 150px;
+        height: 150px;
+    }
+    
+    .counter {
+        grid-row: 1;
+        grid-column: 1;
+    }
+    
+    .itemArea {
+        grid-row: 3;
+        grid-column: 1;
+    }
+
+    .akiyamaLabel {
+        display: none;
+    }
+
 }
