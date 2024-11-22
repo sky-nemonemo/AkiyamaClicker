@@ -4,7 +4,7 @@ var data = {
 };
 
 var persecond = 0;
-const appVersion = "0.9";
+const appVersion = "0.9.1";
 
 const itemsData = [
     {
@@ -62,33 +62,34 @@ function init() {
 }
 
 function updateItems() {
-    $(".itemTable")[0].innerHTML = "";
+    var element = "";
+    element = "";
     itemsData.forEach((item) => {
         var enabled = data.count >= (item.cost * (data.items[item.name] + 1));
-        $(".itemTable")[0].innerHTML += `
-                <tr>
-                    <td>
-                        <button name="${item.name}" cost="${item.cost}" persecond="${item.persecond}" class="item ${item.name}" ${enabled ? "" : "disabled"} onclick="upgradeItem(this)">
-                            <svg>
-                                <text x="5" y="94" class="itemLabel">${item.label}</text>
-                                <text x="250" y="28">LEVEL</text>
-                                <text x="330" y="26">:</text>
-                                <text x="350" y="28">${data.items[item.name]}</text>
-                                <text x="250" y="58">COST</text>
-                                <text x="330" y="56">:</text>
-                                <text x="350" y="58" class="heart">❤</text>
-                                <text x="380" y="58">${(item.cost * (data.items[item.name] + 1)).toLocaleString()}</text>
-                                <text x="250" y="88">❤/sec</text>
-                                <text x="330" y="86">:</text>
-                                <text x="350" y="88" class="heart">❤</text>
-                                <text x="380" y="88">${item.persecond.toLocaleString()}</text>
-                                <rect x="0" y="0" width="100%" height="100%" fill="black">
-                            </svg>
-                        </button>
-                    </td>
-                </tr>
+        element += `
+                <li class="list-group-item m-0 p-0 item">
+                    <button name="${item.name}" cost="${item.cost}" persecond="${item.persecond}" class="px-0 item ${item.name}" ${enabled ? "" : "disabled"} onclick="upgradeItem(this)">
+                        <svg>
+                            <text x="5" y="94" class="itemLabel">${item.label}</text>
+                            <text x="250" y="28">LEVEL</text>
+                            <text x="330" y="26">:</text>
+                            <text x="350" y="28">${data.items[item.name]}</text>
+                            <text x="250" y="58">COST</text>
+                            <text x="330" y="56">:</text>
+                            <text x="350" y="58" class="heart">❤</text>
+                            <text x="380" y="58">${(item.cost * (data.items[item.name] + 1)).toLocaleString()}</text>
+                            <text x="250" y="88">❤/sec</text>
+                            <text x="330" y="86">:</text>
+                            <text x="350" y="88" class="heart">❤</text>
+                            <text x="380" y="88">${item.persecond.toLocaleString()}</text>
+                            <rect x="0" y="0" width="100%" height="100%" fill="black">
+                        </svg>
+                    </button>
+                </li>
         `;
     });
+    element += `<li class="dummy"></li>`;
+    $(".itemTable").html(element);
 }
 
 function upgradeItem(item) {
