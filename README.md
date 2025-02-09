@@ -1,3 +1,3 @@
 # Akiyama Clicker
 
-鋭意作成中・・・？
+暁山瑞希を愛で続けるだけのゲーム（CookieClicker風味）
